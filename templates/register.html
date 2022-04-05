@@ -1,0 +1,11 @@
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+<div style="text-align: center;"> <h1>Create an Account</h1></div>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form.username|as_crispy_field}}
+        {{ form.email|as_crispy_field}}
+        {{ form.password1|as_crispy_field}}
+        {{ form.password2|as_crispy_field}}
+        <button type="submit" class="btn btn-success">Register</button>
+    </form>
